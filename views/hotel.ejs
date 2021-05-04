@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+    <title>Hotel Delux</title>
+</head>
+<body>
+    
+    <section class="search-results header">
+        <%- include('partials/navbar') %>
+        <div class="results">
+            <div class="user_search">
+                <h1 class="result reserved_date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-check-fill" viewBox="0 0 16 16">
+                    <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-5.146-5.146l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708z" style="color:green;"/>
+                  </svg>  <%= dates %> </h1>
+                <h1 class="result reserved_adults"><i class="fa fa-male" aria-hidden="true" style="color:red;font-size: 25px;"></i>  <%= adults%> </h1>
+                <h1 class="result reserved_children"><i class="fas fa-baby" style="color:lightblue;font-size: 20px;"></i>
+                     <%= children%> </h1>
+                <h1 class="result reserved_stay_days"><p style="display: inline; color:black">zZZ</p> Ukupno noćenja: <% if(daysDiff === 0) {daysDiff = 1}%> <%= daysDiff %>  </h1>
+            </div>
+        </div>
+        <div class="rooms-available" >
+            <div class="room-types">
+            <div class="classic-room card" style=" align-self: center;">
+                <img class="card-img" src="images/img1.jpg" alt="">
+                <h3 class="room_modal_btn card-title">Ležerna soba</h3>
+                <p class="room-price card-text">Cijena za 
+                    <%= daysDiff %>. <%= nightString %> :
+                    <% if (daysDiff === 0) { %>
+                        450
+                    <% } else {%>
+                        <%= daysDiff*450 %> 
+                        <% } %> HRK
+                    </p>
+                    <div class="availability"><a href="#room2"><%= cassualRoomAvailability %></a></div>
+            </div>
+            <div class="superior-room card" style=" align-self: center;">
+                <img class="card-img" src="images/img2.jpg" alt="">
+                <h3 class="card-title">Superiorna soba</h3>
+                <p class="room-price card-text">Cijena za <%= daysDiff %>. <%= nightString %> :
+                <% if (daysDiff === 0) { %>
+                    900
+                <% } else {%>
+                    <%= daysDiff*900 %> 
+                    <% } %> HRK
+                </p>
+                <div class="availability"><a href="#room2"><%= superiorRoomAvailability %></a></div>
+            </div>
+            <div class="luxury-room card" style=" align-self: center;">
+                <img class="card-img" src="images/banner-img.jpg" alt="">
+                <h3>Luksuzna soba</h3>
+                <p class="room-price">Cijena za <%= daysDiff %>. <%= nightString %> :
+                    <% if (daysDiff === 0) { %>
+                        1500
+                    <% } else {%>
+                        <%= daysDiff*1500 %> 
+                        <% } %> HRK
+                    </p>
+                <div class="availability"><a href="#room3"><%= luxuryRoomAvailability %></a></div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <%- include('partials/hotel_content.ejs') %> 
+    <%-  include('partials/hotel_rooms.ejs')%> 
+    <script src="index.js"></script>
+    <%- include('partials/footer')  %> 

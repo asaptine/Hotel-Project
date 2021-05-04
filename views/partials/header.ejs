@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logopng.png">
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"defer></script>
+    <script type="text/javascript" src="rangepicker.js" defer></script>
+    <script type="text/javascript" src="index.js" defer></script>
+    <title>Hotel Delux</title>
+</head>
+<body>
+    <header class="header" id = "header">
+        <%- include('navbar') %> 
+        <div class = "head-top">
+            <div class = "site-name">
+                <span>Hotel Delux</span>
+            </div>
+        </div>
+        </div>
+        <div class="head-bottom flex">
+            <h2>LIJEPO I UGODNO MJESTO ZA PRESJEDANJE</h2>
+            <p>Boravljenje u ugodnom ozračju</p>
+        </div>
+        <%- include('book.ejs') %> 
+    </header>

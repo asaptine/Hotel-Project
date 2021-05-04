@@ -1,0 +1,19 @@
+<div class="book" id="booking">
+    <form method="POST" class="book-form" action="hotel">
+        <div class="form-item">
+            <label for="checkin-checkoff">Prijava/Odjava</label>
+            <input type="text" name="dates">
+        </div>
+        <div class="form-item">
+            <label for="adult">Odrasli:</label>
+            <input name='adults' type="number" min="1" max="5" value="1" id="adult">
+        </div>
+        <div class="form-item">
+            <label for="children">Djeca:</label>
+            <input name='children' type="number" min="0" max="5" value="0" id="children">
+        </div>
+        <div class="form-item">
+            <input type="submit" class="submit_form btn" value="Pretraga" id="submit-form-btn">
+        </div>
+    </form>
+</div>
